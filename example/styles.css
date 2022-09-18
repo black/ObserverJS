@@ -1,0 +1,32 @@
+ body {
+     font-family: sans-serif;
+     background-color: #2a2a2a;
+     color: white;
+ }
+
+ .parent {
+     display: flex;
+     gap: 0.5rem;
+ }
+
+ .main {
+     display: flex;
+     flex-direction: column;
+     flex: 1;
+ }
+
+ button {
+     padding: 0.5rem 1.5rem;
+     background-color: #fff;
+     font-weight: 600;
+     border-radius: 0.25rem;
+     cursor: pointer;
+ }
+
+ button:hover {
+     background-color: #eee;
+ }
+
+ #loading{
+    display: none;
+ }
