@@ -19,7 +19,7 @@ const myviewmodel = new MyViewModel() // example type 2 where all the variables 
 Modifying/Changing values on button click so that other can observe the change in the value
 */
 btnCats.addEventListener("click", (e) => {
-    cats.setValue("Cats: " + Math.random() * 100) 
+    cats.setValue("Cats: " + makeid(10))
 })
 
 btnApple.addEventListener("click", (e) => {
@@ -36,7 +36,7 @@ btnBanan.addEventListener("click", (e) => {
 
 // example 1 observer
 cats.observe(data => {
-    catsView.innerText = makeid(10)
+    catsView.innerText = data
     console.log('banana->', data)
 })
 
