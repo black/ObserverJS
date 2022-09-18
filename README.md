@@ -61,7 +61,7 @@ myviewmodel.dogs.observe(data => {
 
 ```
 
-### Encapsulate all the values into a single class 
+### Observe data from FAKE API Call
 
 ```
 // example type 3
