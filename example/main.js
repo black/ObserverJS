@@ -11,14 +11,15 @@ const btn = document.getElementById('btn')
 Initializing View Model here 
 */
 const myviewmodel = new MyViewModel()
-
+const cats = new LiveObserver()
+ 
 /*
 Modifying/Changing values on button click so that other can observe the change in the value
 */
 btn.addEventListener("click", (e) => { 
     myviewmodel.apple.setValue("Apple: " + Math.random()*100)
     myviewmodel.banana.setValue("Banana: " + Math.random() * 100)
-    myviewmodel.cats.setValue("Cats: " + Math.random() * 100)
+    cats.setValue("Cats: " + Math.random() * 100) 
 })
 
 /*
@@ -34,7 +35,7 @@ myviewmodel.banana.observe(data => {
     console.log('banana->', data)
 })
 
-myviewmodel.cats.observe(data => {
+cats.observe(data => {
     catsView.innerText = data
     console.log('banana->', data)
 })
