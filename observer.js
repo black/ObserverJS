@@ -13,7 +13,7 @@ function LiveObserver(data) {
 
 LiveObserver.prototype.setValue = function (_value) {
     this.obj.foo = _value 
-}
+} 
 
 LiveObserver.prototype.observe = function (callback) {
     this.obj = observerProxy(obj, (target, prop, changes) => {

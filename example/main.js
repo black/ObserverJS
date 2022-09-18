@@ -4,6 +4,8 @@
 const catsView = document.getElementById('cats')
 const appleView = document.getElementById('apple')
 const bananaView = document.getElementById('banana')
+const fakeAPIView = document.getElementById('fakeAPI')
+const loadingView = document.getElementById('loading')
 
 const btnCats = document.getElementById('btnCats')
 const btnApple = document.getElementById('btnApple')
@@ -14,6 +16,7 @@ Initializing View Model here
 */
 const cats = new LiveObserver() // example type 1 
 const myviewmodel = new MyViewModel() // example type 2 where all the variables are encapsulated inside a parent class 
+const fakeAPI = new LiveObserver() // example type 3
  
 /*
 Modifying/Changing values on button click so that other can observe the change in the value
@@ -51,8 +54,20 @@ myviewmodel.banana.observe(data => {
     console.log('banana->', data)
 })
 
+/*---------------------------------------------*/
+loadingView.style.display = 'block'
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => setTimeout(function(){
+        loadingView.style.display = 'none'
+        fakeAPI.setValue(json)
+    }, 3000))
 
 
+fakeAPI.observe(data => {
+    console.log(data)
+    fakeAPIView.innerHTML = `<ul><li> ${data.title} </li> <li> ${data.userId} </li> <li> ${data.id} </li><ul/>`
+})
 
 /*---------------------------------------------*/
  function makeid(length) {

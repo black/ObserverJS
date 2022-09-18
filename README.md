@@ -58,3 +58,22 @@ myviewmodel.cats.observe(data => {
 myviewmodel.dogs.observe(data => { 
     console.log('dogs->', data)
 })
+
+```
+
+### Encapsulate all the values into a single class 
+
+```
+// example type 3
+const fakeAPI = new LiveObserver()
+
+fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(json => fakeAPI.setValue(json))
+
+
+fakeAPI.observe(data => {
+    console.log(data) 
+})
+
+```
