@@ -1,14 +1,13 @@
 /*
 Creating Viewmodel class where we are listing values to be observer 
-*/
-const observerProxy = (o, f) => new Proxy(o, {
-    set: (a, b, c) => f(a, b, c)
-})
-
+*/ 
 function LiveObserver(data) {
     obj = {
         foo: data || null
     }
+    observerProxy = (o, f) => new Proxy(o, {
+        set: (a, b, c) => f(a, b, c)
+    })
 }
 
 LiveObserver.prototype.setValue = function (_value) {
@@ -21,3 +20,4 @@ LiveObserver.prototype.observe = function (callback) {
         callback(changes)
     })
 }
+ 
