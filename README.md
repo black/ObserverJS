@@ -2,9 +2,9 @@
 
 ### Kotlin inspired viewmodel like class for JavaScript.  
 
-This library allows you to observe data changes and update views. The design and application is inspired by the Kotlin way of implementing the ViewModel class where you set a value and observe changes at one or more places to update the view. 
+A Kotlin-inspired ViewModel-like class for JavaScript, designed to help you manage and observe data changes in your application. This library allows you to set values and observe changes, automatically updating views wherever necessary. The design and concept are inspired by Kotlin's ViewModel class, which makes it easier to separate UI logic from business logic while ensuring that views stay synchronized with the data.
 
-_I am still working on it so use this on your own risk._
+_This project is still in progress, so use it at your own risk._
 
 ## Usage
 
